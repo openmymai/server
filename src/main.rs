@@ -13,7 +13,7 @@ fn main() {
     let public_path = env::var("PUBLIC_PATH").unwrap_or(default_path);
     println!("public_path: {}", public_path);
     // expected struct std::string::String (only "127.0.0.1:8080") found &str, try using '.to_string()'
-    let server = Server::new("127.0.0.1:8080".to_string());
+    let server = Server::new("0.0.0.0:8080".to_string());
     server.run(WebsiteHandler::new(public_path));
 }
 
